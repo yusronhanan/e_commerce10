@@ -1,4 +1,5 @@
 import 'package:e_commerce10/app/auth_widget.dart';
+import 'package:e_commerce10/app/pages/admin/admin_home.dart';
 import 'package:e_commerce10/app/pages/auth/sign_in_page.dart';
 import 'package:e_commerce10/app/providers.dart';
 import 'package:e_commerce10/firebase_options.dart';
@@ -21,8 +22,10 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+            colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.orange,
+          primary: Colors.orange,
+        )),
         home: AuthWidget(
           nonSignedInBuilder: (context) => const Scaffold(
             body: SignInPage(),
@@ -41,6 +44,7 @@ class MyApp extends ConsumerWidget {
               ],
             )),
           ),
+          adminSignedInBuilder: (BuildContext context) => const AdminHome(),
         ));
   }
 }
