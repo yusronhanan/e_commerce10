@@ -38,7 +38,7 @@ dependencies:
   cloud_firestore: ^3.1.11 # for database
   firebase_storage: ^10.2.10 #for storage
   flutterfire_ui: ^0.4.0 # for pre-built uis
-
+  flutter_riverpod: ^1.0.3 #state management
 dev_dependencies:
   flutter_test:
     sdk: flutter
