@@ -16,4 +16,15 @@ class FirestoreService {
         .then((value) => print(value))
         .catchError((onError) => print("Error"));
   }
+
+  Stream<List<Product>> getProducts() {
+    return firestore
+        .collection("products")
+        .snapshots()
+        .map((snapshot) => snapshot.docs.map((doc) {
+              // loop through docs
+              final d = doc.data(); // for each doc get the data
+              return Product.fromMap(d); // convert into a map
+            }).toList()); // build a list out of the products mapping
+  }
 }
