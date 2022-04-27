@@ -1,2 +1,2 @@
 # flutter_ecommerce_stripe
- Flutter with Stripe
+ Flutter with Riverpod, Firebase, and Stripe
