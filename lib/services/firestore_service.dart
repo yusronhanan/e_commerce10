@@ -10,11 +10,8 @@ class FirestoreService {
   Future<void> addProduct(
     Product product,
   ) async {
-    await firestore
-        .collection("products")
-        .add(product.toMap())
-        .then((value) => print(value))
-        .catchError((onError) => print("Error"));
+    final docId = firestore.collection("products").doc().id;
+    await firestore.collection("products").doc(docId).set(product.toMap(docId));
   }
 
   Stream<List<Product>> getProducts() {
@@ -26,5 +23,9 @@ class FirestoreService {
               final d = doc.data(); // for each doc get the data
               return Product.fromMap(d); // convert into a map
             }).toList()); // build a list out of the products mapping
+  }
+
+  Future<void> deleteProduct(String id) async {
+    return await firestore.collection("products").doc(id).delete();
   }
 }
