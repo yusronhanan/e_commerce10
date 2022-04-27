@@ -1,5 +1,6 @@
 import 'package:e_commerce10/app/providers.dart';
 import 'package:e_commerce10/models/product.dart';
+import 'package:e_commerce10/widgets/product_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:e_commerce10/extensions/string_ext.dart';
@@ -33,11 +34,11 @@ class ProductsDisplay extends ConsumerWidget {
                       final product = snapshot.data![index];
                       return GestureDetector(
                         onTap: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) =>
-                          //             ProductDetail(product: product)));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ProductDetail(product: product)));
                         },
                         child: Container(
                           padding: const EdgeInsets.all(10.0),
