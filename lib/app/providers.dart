@@ -1,6 +1,7 @@
 import 'package:e_commerce10/services/firestore_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 
 final firebaseAuthProvider =
     Provider<FirebaseAuth>((ref) => FirebaseAuth.instance);
@@ -18,3 +19,5 @@ final databaseProvider = Provider<FirestoreService?>((ref) {
   }
   return null;
 });
+
+final addImageProvider = StateProvider<XFile?>((_) => null);
