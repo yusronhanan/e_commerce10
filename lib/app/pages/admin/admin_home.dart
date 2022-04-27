@@ -1,6 +1,7 @@
 import 'package:e_commerce10/app/providers.dart';
 import 'package:e_commerce10/models/product.dart';
 import 'package:e_commerce10/pages/admin/admin_add_product.dart';
+import 'package:e_commerce10/utils/snackbars.dart';
 import 'package:e_commerce10/widgets/project_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -52,6 +53,8 @@ class AdminHome extends ConsumerWidget {
                         child: ProductListTile(
                             product: product,
                             onDelete: () async {
+                              openIconSnackBar(context, "Deleting item...",
+                                  const Icon(Icons.check, color: Colors.white));
                               await ref
                                   .read(databaseProvider)!
                                   .deleteProduct(product.id!);
