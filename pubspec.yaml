@@ -41,6 +41,9 @@ dependencies:
   flutter_riverpod: ^1.0.3 #state management
   image_picker: ^0.8.5
 
+  flutter_slidable: ^1.2.0
+  lottie: ^1.2.2 #cool animations
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
