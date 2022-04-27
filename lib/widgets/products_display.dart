@@ -1,6 +1,6 @@
 import 'package:e_commerce10/app/providers.dart';
 import 'package:e_commerce10/models/product.dart';
-import 'package:e_commerce10/widgets/product_detail.dart';
+import 'package:e_commerce10/pages/user/product_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:e_commerce10/extensions/string_ext.dart';
