@@ -83,14 +83,28 @@ class _AdminAddProductPageState extends ConsumerState<AdminAddProductPage> {
 
   _addProduct() async {
     final storage = ref.read(databaseProvider);
-    if (storage == null) {
+    final fileStorage = ref.read(storageProvider); // reference file storage
+    final imageFile =
+        ref.read(addImageProvider.state).state; // referece the image File
+
+    if (storage == null || fileStorage == null || imageFile == null) {
+      // make sure none of them are null
+      // ignore: avoid_print
+      print("Error: storage, fileStorage or imageFile is null");
       return;
     }
+
+    // Upload to Filestorage
+    final imageUrl = await fileStorage.uploadFile(
+      // upload File using our
+      imageFile.path,
+    );
+
     await storage.addProduct(Product(
       name: titleTextEditingController.text,
       description: descriptionEditingController.text,
       price: double.parse(priceEditingController.text),
-      imageUrl: "image",
+      imageUrl: imageUrl,
     ));
     Navigator.pop(context);
   }

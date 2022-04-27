@@ -1,4 +1,5 @@
 import 'package:e_commerce10/services/firestore_service.dart';
+import 'package:e_commerce10/services/storage_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
@@ -21,3 +22,12 @@ final databaseProvider = Provider<FirestoreService?>((ref) {
 });
 
 final addImageProvider = StateProvider<XFile?>((_) => null);
+
+final storageProvider = Provider<StorageService?>((ref) {
+  final auth = ref.watch(authStateChangesProvider);
+  String? uid = auth.asData?.value?.uid;
+  if (uid != null) {
+    return StorageService(uid: uid);
+  }
+  return null;
+});
