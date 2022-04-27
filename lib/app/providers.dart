@@ -1,3 +1,4 @@
+import 'package:e_commerce10/models/bag_view_model.dart';
 import 'package:e_commerce10/services/firestore_service.dart';
 import 'package:e_commerce10/services/storage_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -30,4 +31,8 @@ final storageProvider = Provider<StorageService?>((ref) {
     return StorageService(uid: uid);
   }
   return null;
+});
+
+final bagProvider = ChangeNotifierProvider<BagViewModel>((ref) {
+  return BagViewModel();
 });
