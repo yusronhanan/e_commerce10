@@ -1,18 +1,27 @@
 import 'package:e_commerce10/app/auth_widget.dart';
 import 'package:e_commerce10/app/pages/admin/admin_home.dart';
 import 'package:e_commerce10/app/pages/auth/sign_in_page.dart';
-import 'package:e_commerce10/app/providers.dart';
 import 'package:e_commerce10/firebase_options.dart';
 import 'package:e_commerce10/pages/user/user_home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:device_preview/device_preview.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const ProviderScope(child: MyApp()));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  Stripe.publishableKey = "";
+  runApp(ProviderScope(
+    child: DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp(), // Wrap your app
+    ),
+  ));
 }
 
 class MyApp extends ConsumerWidget {

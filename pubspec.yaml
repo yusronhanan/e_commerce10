@@ -43,6 +43,9 @@ dependencies:
 
   flutter_slidable: ^1.2.0
   lottie: ^1.2.2 #cool animations
+  flutter_stripe: ^2.4.0
+  http: ^0.13.4
+  device_preview: ^1.0.0
 
 dev_dependencies:
   flutter_test:
