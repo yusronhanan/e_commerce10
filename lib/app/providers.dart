@@ -1,5 +1,6 @@
 import 'package:e_commerce10/models/bag_view_model.dart';
 import 'package:e_commerce10/services/firestore_service.dart';
+import 'package:e_commerce10/services/payment_service.dart';
 import 'package:e_commerce10/services/storage_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -35,4 +36,8 @@ final storageProvider = Provider<StorageService?>((ref) {
 
 final bagProvider = ChangeNotifierProvider<BagViewModel>((ref) {
   return BagViewModel();
+});
+
+final paymentProvider = Provider<PaymentService>((ref) {
+  return PaymentService();
 });

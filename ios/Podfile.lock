@@ -124,8 +124,31 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.1.0)
+  - shared_preferences_ios (0.0.1):
+    - Flutter
   - sign_in_with_apple (0.0.1):
     - Flutter
+  - Stripe (22.0.0):
+    - Stripe/Stripe3DS2 (= 22.0.0)
+    - StripeApplePay (= 22.0.0)
+    - StripeCore (= 22.0.0)
+    - StripeUICore (= 22.0.0)
+  - Stripe/Stripe3DS2 (22.0.0):
+    - StripeApplePay (= 22.0.0)
+    - StripeCore (= 22.0.0)
+    - StripeUICore (= 22.0.0)
+  - stripe_ios (0.0.1):
+    - Flutter
+    - Stripe (~> 22.0.0)
+    - StripeConnections (~> 22.0.0)
+  - StripeApplePay (22.0.0):
+    - StripeCore (= 22.0.0)
+  - StripeConnections (22.0.0):
+    - StripeCore (= 22.0.0)
+    - StripeUICore (= 22.0.0)
+  - StripeCore (22.0.0)
+  - StripeUICore (22.0.0):
+    - StripeCore (= 22.0.0)
   - twitter_login (0.0.1):
     - Flutter
 
@@ -141,7 +164,9 @@ DEPENDENCIES:
   - flutter_facebook_auth (from `.symlinks/plugins/flutter_facebook_auth/ios`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
   - sign_in_with_apple (from `.symlinks/plugins/sign_in_with_apple/ios`)
+  - stripe_ios (from `.symlinks/plugins/stripe_ios/ios`)
   - twitter_login (from `.symlinks/plugins/twitter_login/ios`)
 
 SPEC REPOS:
@@ -166,6 +191,11 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - Stripe
+    - StripeApplePay
+    - StripeConnections
+    - StripeCore
+    - StripeUICore
 
 EXTERNAL SOURCES:
   cloud_firestore:
@@ -191,8 +221,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_sign_in_ios/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
+  shared_preferences_ios:
+    :path: ".symlinks/plugins/shared_preferences_ios/ios"
   sign_in_with_apple:
     :path: ".symlinks/plugins/sign_in_with_apple/ios"
+  stripe_ios:
+    :path: ".symlinks/plugins/stripe_ios/ios"
   twitter_login:
     :path: ".symlinks/plugins/twitter_login/ios"
 
@@ -233,7 +267,14 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
+  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
   sign_in_with_apple: f3bf75217ea4c2c8b91823f225d70230119b8440
+  Stripe: ee32e594fa4dee4bdf2a8a3039f7fb07a21075dc
+  stripe_ios: 4ae5942d4f2f383c2be5c187e6e4e4f31e29c0a5
+  StripeApplePay: e09964f3e2c6b318e53a05c12f3cb7efc592484d
+  StripeConnections: d3068bf688679a51932abb94d956d8a73c213bd7
+  StripeCore: 689b9605ccb78e507f59ddc5e677615e0af16583
+  StripeUICore: f5fe5ad283e132b40077b5eb85b625ebf7de034a
   twitter_login: 2794db69b7640681171b17b3c2c84ad9dfb4a57f
 
 PODFILE CHECKSUM: 1ea7a06045b71796d6e62233eeedb96481ac617f
