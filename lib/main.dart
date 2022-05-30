@@ -17,10 +17,11 @@ void main() async {
   );
   Stripe.publishableKey = "";
   runApp(ProviderScope(
-    child: DevicePreview(
-      enabled: true,
-      builder: (context) => MyApp(), // Wrap your app
-    ),
+    // child: DevicePreview(
+    // enabled: true,
+    // builder: (context) => MyApp(), // Wrap your app
+    // ),
+    child: MyApp(),
   ));
 }
 
